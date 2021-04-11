@@ -2,11 +2,11 @@
 {% block content %}
     {% include 'uploader_links.html' %}
     <h2>ファイルアップローダー</h2>
-    <form method="post" enctype="multipart/form-data">
+    <form action="{% url 'uploader:upload' %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="form-group">
             <label for="file">ファイル</label>
-            <input type="file" name="file" id="file">
+            <input type="file" name="file" id="file" required>
         </div>
         <button type="submit" class="btn btn-primary">アップロード</button>
 
