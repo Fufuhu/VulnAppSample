@@ -10,6 +10,29 @@
         </div>
     </form>
 
-    {{ message.body }}
+    {% if message is not None%}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">投稿者名</th>
+                    <th scope="col">投稿日時</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td scope="col">{{ message.id }}</td>
+                    <td scope="col">{{ message.user }}</td>
+                    <td scope="col">{{ message.created_at }}</td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <div class="font-weight-bold">本文</div>
+                        {{ message.body }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    {% endif %}
 
 {% endblock content %}
