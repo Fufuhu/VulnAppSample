@@ -9,7 +9,7 @@
     {% for message in messages %}
         <div class="shadow-sm rounded">
             <div class="text-left text-muted">
-                メッセージID: {{ message.id }}
+                メッセージID: <a href="{% url 'search_message' message.id %}">{{ message.id }}</a>
             </div>
             <div class="text-center">
                 {{ message.body }}
