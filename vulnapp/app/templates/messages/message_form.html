@@ -1,0 +1,11 @@
+<h2>投稿フォーム</h2>
+<form action="{% url 'message' %}" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="body">本文</label>
+        <textarea placeholder="本文をここに記述" class="form-control" name="body" id="body" rows="8"></textarea>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">投稿</button>
+    </div>
+</form>

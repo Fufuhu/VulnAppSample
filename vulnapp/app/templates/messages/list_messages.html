@@ -1,7 +1,5 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>メッセージ一覧</h1>
-    <div class="mb-3">
-        メッセージ一覧
-    </div>
+    {% include 'messages/message_form.html' %}
+    <h2>メッセージ一覧</h2>
 {% endblock content %}
