@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+    {% include 'messages/message_links.html' %}
     <h2>特定メッセージの検索</h2>
     <form acition="{% url 'message' %}" method="get">
         {% csrf_token %}
