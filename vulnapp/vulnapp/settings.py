@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bootstrap4',
     'app',
+    'uploader',
     'django.contrib.admin',
 ]
 

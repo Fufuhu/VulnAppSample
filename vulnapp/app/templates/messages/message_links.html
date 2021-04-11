@@ -1,5 +1,11 @@
-<div>
-    <a href="{%  url 'home' %}">ホーム</a>・
-    <a href="{% url 'messages' %}">メッセージ一覧</a>・
-    <a href="{% url 'message'  %}">メッセージ検索</a>
+<div class="card-group">
+    <div class="card-body">
+        <a href="{%  url 'home' %}">ホーム</a>
+    </div>
+    <div class="card-body">
+        <a href="{% url 'messages' %}">メッセージ一覧</a>
+    </div>
+    <div class="card-body">
+        <a href="{% url 'message'  %}">メッセージ検索</a>
+    </div>
 </div>
