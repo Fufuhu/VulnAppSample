@@ -10,7 +10,10 @@ class MessageView(LoginRequiredMixin, View):
     def get(self, request):
         context = {}
 
-        return render(request, 'messages/post_message.html', context=context)
+        user = request.user
+        context['messages'] = Message.objects.filter(user=user)
+
+        return render(request, 'messages/list_messages.html', context=context)
 
     def post(self, request):
         context={}
@@ -21,5 +24,7 @@ class MessageView(LoginRequiredMixin, View):
 
         message = Message(body=body, user=user)
         message.save()
+
+        context['messages'] = Message.objects.filter(user=user)
 
         return render(request, 'messages/list_messages.html', context=context)
