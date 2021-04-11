@@ -16,4 +16,4 @@ class Message(models.Model):
 
 @admin.register(Message)
 class MessageAdmin(admin.ModelAdmin):
-    list_display = ('body', 'created_at', 'created_at', 'updated_at')
+    list_display = ('id', 'body', 'created_at', 'created_at', 'updated_at')
