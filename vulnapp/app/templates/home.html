@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+    いらっしゃいませ、{{ user.username }}さん。
+    <div class="card-group">
+        <div class="card" >
+            <div class="card-body">
+                <h5 class="card-title">Python Playground</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Pythonをブラウザで体験</h6>
+                <p class="card-text">Pythonをブラウザ上で体験するための画面です</p>
+                <a href="#" class="card-link">リンク</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Personal Memorandom</h5>
+                <h6 class="card-subtitle mb-2 text-muted">個人メモ</h6>
+                <p class="card-text">非公開の個人的なメモを格納するためのサービスです</p>
+                <a href="{% url 'messages' %}" class="card-link">リンク</a>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

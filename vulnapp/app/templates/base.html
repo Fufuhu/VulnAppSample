@@ -1,0 +1,31 @@
+{% load static %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+<html>
+    <head></head>
+    <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-dark bg-dark" role="navigation">
+        <div class="container">
+            <div class="navbar-brand">脆弱なメモ置き場アプリケーション</div>
+            {% if user.is_authenticated %}
+                <div class="float-lg-right">
+                    <p class="text-light">{{ user.username }}でログイン中</p>
+                    <a href="{% url 'logout' %}" class="btn btn-outline-success">ログアウト</a>
+                </div>
+            {% endif %}
+        </div>
+    </nav>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <footer style="	height:100px; width:100%; position:absolute; bottom:0;" class="text-light bg-dark">
+        <div class="container">
+            (C) Ryoma Fujiwara
+        </div>
+    </footer>
+
+    </body>
+</html>

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>投稿メッセージ</h1>
+    <form>
+        {% csrf_token %}
+        <div class="mb-3">
+            <textarea class="form-control" placeholder="投稿したいメッセージを入力してください" required></textarea>
+        </div>
+    </form>
+{% endblock content %}
