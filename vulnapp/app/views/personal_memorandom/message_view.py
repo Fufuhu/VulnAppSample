@@ -1,30 +1,25 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic.base import View
 
-from app.models.message import Message
+from app.models import Message
 
 
 class MessageView(LoginRequiredMixin, View):
 
-    def get(self, request):
+    def get(self, request, message_id=None):
         context = {}
 
-        user = request.user
-        context['messages'] = Message.objects.filter(user=user)
+        mid = request.GET.get('message_id')
+        if mid:
+            return redirect(to='search_message', message_id=mid)
 
-        return render(request, 'messages/list_messages.html', context=context)
+        if message_id is not None:
+            message = Message.objects.get(id=message_id)
+            context['message'] = message
 
-    def post(self, request):
-        context={}
+            return render(request, 'messages/search_message.html', context=context)
 
-        user = request.user
-        body = request.POST.get('body')
-        print(body)
 
-        message = Message(body=body, user=user)
-        message.save()
+        return render(request, 'messages/search_message.html', context=context)
 
-        context['messages'] = Message.objects.filter(user=user)
-
-        return render(request, 'messages/list_messages.html', context=context)

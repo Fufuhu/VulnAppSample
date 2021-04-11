@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>特定メッセージの検索</h2>
+    <form acition="{% url 'message' %}" method="get">
+        {% csrf_token %}
+        <div classs="form-group">
+            <label for="message_id">メッセージID</label>
+            <input type="text" placeholder="メッセージID" name="message_id" id="message_id">
+            <button type="submit" class="btn btn-primary">検索</button>
+        </div>
+    </form>
+
+    {{ message.body }}
+
+{% endblock content %}
