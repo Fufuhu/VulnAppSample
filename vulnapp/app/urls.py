@@ -5,7 +5,5 @@ from .views.personal_memorandom.messages_view import MessagesView
 
 urlpatterns = [
     path('', HomeView.as_view(), name='home'),
-    # path('messages/', MessagesView.as_view(), name='messages'),
     path('messages/', MessageView.as_view(), name='messages'),
-    re_path(r'^message$', MessageView.as_view(), name='message'),
 ]

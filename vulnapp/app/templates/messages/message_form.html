@@ -1,5 +1,5 @@
 <h2>投稿フォーム</h2>
-<form action="{% url 'message' %}" method="post">
+<form action="{% url 'messages' %}" method="post">
     {% csrf_token %}
     <div class="form-group">
         <label for="body">本文</label>
