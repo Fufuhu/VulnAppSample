@@ -7,5 +7,5 @@ app_name = 'uploader'
 
 urlpatterns = [
     path('', HomeView.as_view(), name='home'),
-    path('upload/', UploadView.as_view(), name='upload')
+    path('uploaded/', UploadView.as_view(), name='upload')
 ]

@@ -2,13 +2,26 @@
 {% block content %}
     {% include 'uploader_links.html' %}
     <h2>ファイルアップローダー</h2>
-    <form action="{% url 'uploader:upload' %}" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <div class="form-group">
-            <label for="file">ファイル</label>
-            <input type="file" name="file" id="file" required>
-        </div>
-        <button type="submit" class="btn btn-primary">アップロード</button>
+    <div class="border-bottom">
+        <form action="{% url 'uploader:upload' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="file">ファイル</label>
+                <input type="file" name="file" id="file" required>
+            </div>
+            <button type="submit" class="btn btn-primary">アップロード</button>
+        </form>
+    </div>
 
-    </form>
+    {% for uploaded in uploaded_files %}
+        <div class="shadow-sm rounded">
+            <div class="text-left text-muted">
+                ファイルID: {{ uploaded.id }}
+            </div>
+            <div>
+                <a href="{% url 'uploader:upload' %}?filepath={{ uploaded.path }}">{{ uploaded.path }}</a>
+            </div>
+            <p class="text-right text-muted">投稿者: {{ uploaded.user }} アップロード日時 {{ uploaded.created_at }}</p>
+        </div>
+    {% endfor %}
 {% endblock content %}
