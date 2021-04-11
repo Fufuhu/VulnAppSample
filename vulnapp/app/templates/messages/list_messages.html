@@ -2,12 +2,14 @@
 {% block content %}
     {% include 'messages/message_form.html' %}
     <h2>メッセージ一覧</h2>
+    {% autoescape off %}
     {% for message in messages %}
         <div class="shadow-sm rounded">
             <div class="text-center">
                 {{ message.body }}
             </div>
-            <p class="text-right text-muted">{{ message.user }}</p>
+            <p class="text-right text-muted">{{ message.user }} 投稿日時: {{ message.created_at }}</p>
         </div>
     {% endfor %}
+    {% endautoescape %}
 {% endblock content %}
