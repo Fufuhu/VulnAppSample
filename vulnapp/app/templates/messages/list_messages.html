@@ -7,6 +7,9 @@
     {% autoescape off %}
     {% for message in messages %}
         <div class="shadow-sm rounded">
+            <div class="text-left text-muted">
+                メッセージID: {{ message.id }}
+            </div>
             <div class="text-center">
                 {{ message.body }}
             </div>
