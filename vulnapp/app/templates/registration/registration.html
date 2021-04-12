@@ -4,8 +4,7 @@
         <div class="mb-3">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit" class="btn btn-primary">ログイン</button>
-            <p><a href="{% url 'signup' %}">ユーザー登録</a></p>
+            <button type="submit" class="btn btn-primary">ユーザー作成</button>
         </div>
     </form>
 {% endblock content %}
