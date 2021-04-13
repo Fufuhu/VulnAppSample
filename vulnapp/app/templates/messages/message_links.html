@@ -1,11 +1,11 @@
-<div class="card-group">
-    <div class="card-body">
-        <a href="{%  url 'home' %}">ホーム</a>
-    </div>
-    <div class="card-body">
-        <a href="{% url 'messages' %}">メッセージ一覧</a>
-    </div>
-    <div class="card-body">
-        <a href="{% url 'message'  %}">メッセージ検索</a>
-    </div>
-</div>
+<ul class="nav">
+    <li class="nav-item">
+        <a class="nav-link" href="{%  url 'home' %}">ホーム</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'messages' %}">メッセージ一覧</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'message'  %}">メッセージ検索</a>
+    </li>
+</ul>

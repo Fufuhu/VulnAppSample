@@ -2,16 +2,13 @@
 {% block content %}
     {% include 'uploader_links.html' %}
     <h2>ファイルアップローダー</h2>
-    <div class="border-bottom">
         <form action="{% url 'uploader:upload' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            <div class="form-group">
-                <label for="file">ファイル</label>
+                <label for="file">アップロードするファイル:</label>
                 <input type="file" name="file" id="file" required>
-            </div>
+            <hr/>
             <button type="submit" class="btn btn-primary">アップロード</button>
         </form>
-    </div>
 
     {% for uploaded in uploaded_files %}
         <div class="shadow-sm rounded">

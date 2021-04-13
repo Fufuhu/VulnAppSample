@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('app.urls')),
     path('uploader/', include('uploader.urls', namespace='uploader')),
+    path('crawler/', include('crawler.urls', namespace='crawler')),
     path('accounts/signup/', SignupView.as_view(),name='signup'),
     path('accounts/', include('django.contrib.auth.urls')),
 ]
