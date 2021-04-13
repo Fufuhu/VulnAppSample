@@ -1,9 +1,9 @@
 <h2>クロール先指定フォーム</h2>
-<form>
+<form method="get" action="{% url 'crawler:crawl' %}">
     <div class="form-group">
         <label for="url">クロール対象URL</label>
         <input type="text" class="form-control" placeholder="クロール先のURL(http(s)://〜)" name="url" id="url" required>
-        <small class="form-text text-muted">クロール先のURLをhttp://〜またはhttps://〜の形で入力してください</small>
+        <small class="form-text text-muted">クロール先のURLをhttp://〜またはhttps://〜の形で入力してください(255文字以内)</small>
     </div>
     <div class="form-group">
         <label for="memo">メモ</label>

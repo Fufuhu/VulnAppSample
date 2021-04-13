@@ -1,2 +1,18 @@
 <hr/>
 <h2>クロール結果一覧</h2>
+{% for page in pages %}
+    <div class="shadow-sm rounded">
+        <div>
+            {{ page.url }}
+        </div>
+        <div>
+            {{ page.content }}
+        </div>
+        <div>
+            {{ page.memo }}
+        </div>
+        <div>
+            {{ page.created_at }}
+        </div>
+    </div>
+{% endfor %}
