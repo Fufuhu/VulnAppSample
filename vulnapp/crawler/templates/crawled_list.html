@@ -3,15 +3,23 @@
 {% for page in pages %}
     <div class="shadow-sm rounded">
         <div>
-            {{ page.url }}
+            <small class="text-muted">ID:</small>
+            {{ page.id }}
         </div>
         <div>
+            <small class="text-muted">URL:</small>
+            <a href="{{ page.url }}">{{ page.url }}</a>
+        </div>
+        <div>
+            <div><small class="text-muted">コンテンツ</small></div>
             {{ page.content }}
         </div>
         <div>
+            <div><small class="text-muted">メモ</small></div>
             {{ page.memo }}
         </div>
-        <div>
+        <div class="text-right">
+            <small class="text-muted">クロール日時</small>
             {{ page.created_at }}
         </div>
     </div>
