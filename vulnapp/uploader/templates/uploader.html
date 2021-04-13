@@ -4,10 +4,8 @@
     <h2>ファイルアップローダー</h2>
         <form action="{% url 'uploader:upload' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            <div class="custom-file">
-                <input type="file" class="custom-file-input" name="file" id="file" required>
-                <label class="custom-file-label" for="file">ファイル</label>
-            </div>
+                <label for="file">アップロードするファイル:</label>
+                <input type="file" name="file" id="file" required>
             <hr/>
             <button type="submit" class="btn btn-primary">アップロード</button>
         </form>
