@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'bootstrap4',
     'app',
     'uploader',
+    'crawler',
     'django.contrib.admin',
 ]
 
