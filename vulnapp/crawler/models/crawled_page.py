@@ -16,4 +16,4 @@ class CrawledPage(models.Model):
 
 @admin.register(CrawledPage)
 class CrawledPageAdmin(admin.ModelAdmin):
-    list_display = ('id', 'url',)
+    list_display = ('id', 'url', 'created_at')
