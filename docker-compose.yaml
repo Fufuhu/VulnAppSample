@@ -1,6 +1,12 @@
 version: "3.8"
 
 services:
+  mocsecurity:
+    build:
+      context: modsecurity
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
   vulnapp:
     build:
       context: .
