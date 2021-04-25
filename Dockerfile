@@ -8,8 +8,8 @@ RUN mkdir -p /home/vuln/.local/bin
 ENV PATH $PATH:/home/vuln/.local/bin
 EXPOSE 8000
 WORKDIR /home/vuln
-COPY requirements.txt ./
-COPY vulnapp ./
+COPY --chown=vuln:vuln requirements.txt ./
+COPY --chown=vuln:vuln vulnapp ./
 RUN pip install -r requirements.txt
 RUN python manage.py migrate
 CMD python manage.py runserver 0.0.0.0:8000
