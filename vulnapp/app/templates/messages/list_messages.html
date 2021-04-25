@@ -14,6 +14,7 @@
             <div class="text-center">
                 {{ message.body }}
             </div>
+            <p class="text-right"><a href="{% url 'delete_message' message.id %}">削除</a></p>
             <p class="text-right text-muted">投稿者: {{ message.user }} 投稿日時: {{ message.created_at }}</p>
         </div>
     {% endfor %}
